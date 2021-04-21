@@ -27,6 +27,8 @@ if (isset($_POST['submit'])) {
 
 }
 
+mysqli_close($connect);
+
 ?>
 
       
@@ -40,7 +42,7 @@ if (isset($_POST['submit'])) {
            <input type="text" name="name" placeholder= "Enter dish's name"><br/><br/>
            
            <input type='number' step='0.01' name="price" value='0.00' placeholder='0.00' name='price' /><br/><br/>
-           <textarea rows="2" cols="22" name="description" placeholder= "dish description"></textarea> <br/><br/>
+           <textarea rows="4" cols="22" name="description" placeholder= "dish description"></textarea> <br/><br/>
            
            <input type="submit"  name="submit" value= "submit">
        </form>

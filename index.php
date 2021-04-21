@@ -6,7 +6,7 @@ require_once 'db_connect.php';
 $sql ="SELECT * FROM dishes";
 // $result=mysqli_query($connect,$sql);
 
-$result= mysqli_query($connect, $sql);
+$result= mysqli_query($connect, $sql) or die("Query Unsuccessful");
 $rows=mysqli_fetch_all($result,MYSQLI_ASSOC);
 
 echo "<pre>";
