@@ -48,13 +48,13 @@ while($row=mysqli_fetch_assoc($result)){
 
 
 
-// if (isset($_POST['submit'])) {
-// //    $id = $_GET['id'];
-//    $image = $_POST['img'];
-//    $name = $_POST['name'];
-//    $price = $_POST['price'];
-//    $des= $_POST['description'];
-//    $sql = "UPDATE dishes SET img = '$image',name = '$name',price = '$price',description = '$des',description = '$des' where id =$id" ;
+ if (isset($_POST['submit'])) {
+    $id = $_GET['id'];
+    $image = $_POST['img'];
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    $des= $_POST['description'];
+    $sql = "UPDATE dishes SET img = '$image',name = '$name',price = '$price',description = '$des',description = '$des' where id =$id" ;
 
 // //    WHERE id = {$id}
 
@@ -62,20 +62,17 @@ while($row=mysqli_fetch_assoc($result)){
 
 
 
-//    if(mysqli_query($connect,$sql)==true){
-//     // if($connect->query($sql) === TRUE) {
+    if(mysqli_query($connect,$sql)==true){
+    // if($connect->query($sql) === TRUE) {
 
-//      echo "<h4>New Record Successfully updated!</h4><hr>" ;
-//     echo "New update created <br>
-//     <a href='index.php'>Home</a>";
-// }else  {
-//     echo "Error " . $sql . ' ' . $connect->connect_error;
-// }
-
-// }
-// mysqli_close($connect);
-
-// 
+      echo "<h4>New Record Successfully updated!</h4><hr>" ;
+     echo "New update created <br>
+     <a href='index.php'>Home</a>";
+ }else  {
+     echo "Error " . $sql . ' ' . $connect->connect_error;
+ 
+ } 
+    mysqli_close($connect);
 
 
 

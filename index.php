@@ -9,9 +9,9 @@ $sql ="SELECT * FROM dishes";
 $result= mysqli_query($connect, $sql) or die("Query Unsuccessful");
 $rows=mysqli_fetch_all($result,MYSQLI_ASSOC);
 
-echo "<pre>";
-var_dump($rows);
-echo "</pre>";
+// echo "<pre>";
+// var_dump($rows);
+// echo "</pre>";
 ?>
 
 <!doctype html>
@@ -50,9 +50,14 @@ echo '<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3  g-3">';
                <h5 class="card-title"> Dish:' . $rows[$i]['name'].' </h5>
                <h5 class="card-title"> price:' . $rows[$i]['price'].'€ </h5>
                <p class="card-text">description: ' . $rows[$i]['description'] . '</p>
+
+
+               </div>
+               <div class="card-footer">
+               
                <a class="btn btn-primary" href ="delete.php?id='.$rows[$i]['id'].'">delete</a>
                <a class="btn btn-primary" href ="update.php?id='.$rows[$i]['id'].'">update</a>
-           </div>
+               </div>
            </div>
        </div>';
        

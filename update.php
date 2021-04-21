@@ -11,12 +11,40 @@ $sql ="SELECT * FROM dishes WHERE id={$id}";
 $result= mysqli_query($connect, $sql) or die("Query Unsuccessful");
 
 
+
+
+ $showFormular = true;
+if (isset($_POST['submit'])) {
+    $id = $_GET['id'];
+    $image = $_POST['img'];
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    $des= $_POST['description'];
+    $sql = "UPDATE dishes SET img = '$image',name = '$name',price = '$price',description = '$des',description = '$des' where id =$id" ;
+
+
+    if(mysqli_query($connect,$sql)==true){
+    // if($connect->query($sql) === TRUE) {
+
+      echo "<h4>New Record Successfully updated!</h4><hr>" ;
+     echo "New update created <br>
+     <a href='index.php'>Home</a>";
+     $showFormular = false;
+ }else  {
+     echo "Error " . $sql . ' ' . $connect->connect_error;
+ 
+ } 
+    mysqli_close($connect);
+
+}
+
 if(mysqli_num_rows($result)>0){
 
 while($row=mysqli_fetch_assoc($result)){
 
+if($showFormular){
 
-?>
+    ?>
 
 
     <form method="post">
@@ -35,6 +63,7 @@ while($row=mysqli_fetch_assoc($result)){
 
 
 <?php
+}
 
 }
 
